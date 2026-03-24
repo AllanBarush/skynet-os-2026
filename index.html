@@ -1591,6 +1591,8 @@
       nav.style.background = 'rgba(13,13,13,0.85)';
     }
   });
+</script>
+
     <!-- Section 09: SKYNET API Vault -->
     <section class="section section--dark" id="api-vault">
       <div class="container">
@@ -2264,8 +2266,7 @@
                 </div>
             </div>
         </section>
-  </body>
-</html>
+
         <!-- Section 11: Live Infrastructure Status -->
         <section id="infrastructure" class="section section--dark">
             <div class="container">
@@ -2649,3 +2650,15 @@
                 }
             }
         </style>
+
+<script>
+  // Re-initialize fade-in observer for new sections
+  const obs2 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.fade-in:not(.visible)').forEach(el => obs2.observe(el));
+</script>
+</body>
+</html>
